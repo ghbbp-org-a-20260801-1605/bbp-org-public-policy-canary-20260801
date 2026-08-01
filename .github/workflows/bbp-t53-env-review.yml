@@ -1,0 +1,15 @@
+name: BBP T53 Environment Review Canary
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  protected-canary:
+    runs-on: ubuntu-latest
+    environment: bbp-review-canary-t53
+    steps:
+      - name: Emit non-sensitive approval canary
+        run: echo "BBP_T53_ENVIRONMENT_APPROVAL_EXECUTED=true"
